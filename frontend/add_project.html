@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/static/task.png" type="image/x-icon">
+    <title>Add Project</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>TaskFlow</h2>
+
+      <a href="/dashboard">Dashboard</a>
+
+      <a href="/projects">Projects</a>
+
+      <a href="/tasks">Tasks</a>
+
+      <a href="/users">Users</a>
+
+      <a href="/reports">Reports</a>
+
+      <a href="/settings">Settings</a>
+
+      <a href="/logout">Logout</a>
+    </div>
+    <h1>Add Project</h1>
+    <form id="projectForm">
+      <label for="projectId">Project ID:</label>
+      <input type="number" id="projectId" placeholder="Project ID" required />
+
+      <label for="projectName">Project Name:</label>
+      <input type="text" id="projectName" placeholder="Project Name" required />
+
+      <button type="submit">Add Project</button>
+    </form>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

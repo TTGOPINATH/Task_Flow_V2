@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/static/task.png" type="image/x-icon" />
+    <title>Task Management</title>
+
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <h2>TaskFlow</h2>
+
+      <a href="/">Dashboard</a>
+      <a href="/projects-page">Projects</a>
+      <a href="/tasks-page">Tasks</a>
+      <a href="/users-page">Users</a>
+      <a href="/reports-page">Reports</a>
+      <a href="/logout">Logout</a>
+    </div>
+
+    <div class="main-content">
+      <h1>Task Management</h1>
+
+      <button onclick="toggleTaskForm()">Create Task</button>
+
+      <br /><br />
+
+      <div id="taskForm" style="display: none">
+        <form id="createTaskForm">
+          <input
+            type="number"
+            id="projectId"
+            placeholder="Project ID"
+            required
+          />
+
+          <input type="text" id="taskName" placeholder="Task Name" required />
+
+          <textarea id="description" placeholder="Description"></textarea>
+
+          <input
+            type="text"
+            id="assignedBy"
+            placeholder="Assigned By"
+            required
+          />
+
+          <input
+            type="email"
+            id="assignedTo"
+            placeholder="Assigned To Email"
+            required
+          />
+
+          <input type="date" id="deadline" required />
+
+          <select id="status">
+            <option value="Pending">Pending</option>
+
+            <option value="In Progress">In Progress</option>
+
+            <option value="Completed">Completed</option>
+          </select>
+
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+
+      <br />
+
+      <input
+        type="text"
+        id="searchTask"
+        placeholder="Search Tasks"
+        onkeyup="searchTasks()"
+      />
+
+      <br /><br />
+
+      <h3>
+        Total Tasks :
+        <span id="taskCount">0</span>
+      </h3>
+
+      <button onclick="editTask()">Edit</button>
+
+      <br />
+
+      <h2>Pending Tasks</h2>
+      <div id="pendingTasks"></div>
+
+      <br />
+
+      <h2>In Progress Tasks</h2>
+      <div id="progressTasks"></div>
+
+      <br />
+
+      <h2>Completed Tasks</h2>
+      <div id="completedTasks"></div>
+    </div>
+
+    <script src="/static/tasks.js"></script>
+  </body>
+</html>
